@@ -12,20 +12,12 @@ class TelescopeLink extends Tool
 
     const VIEW_NAME = 'nova-telescope-link::navigation';
 
-    public function __construct(?string $label = 'Telescope Debug', ?string $target = 'self')
+    public function __construct(?string $label = 'Telescope Debug', string $target = 'self')
     {
         parent::__construct();
 
         $this->label = $label;
         $this->target = $target;
-    }
-
-    /**
-     * Create link with _Telescope_ logo.
-     */
-    public static function useLogo(?string $target = 'self'): self
-    {
-        return new static(null, $target);
     }
 
     /**
@@ -53,5 +45,20 @@ class TelescopeLink extends Tool
     public function renderNavigation()
     {
         return view(self::VIEW_NAME);
+    }
+
+    public function target(string $target)
+    {
+        $this->target = $target;
+
+        return $this;
+    }
+
+    /**
+     * Create link with _Telescope_ logo.
+     */
+    public static function useLogo(string $target = 'self'): self
+    {
+        return new static(null, $target);
     }
 }
