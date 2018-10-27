@@ -8,22 +8,24 @@ use Laravel\Telescope\Telescope;
 class TelescopeLink extends Tool
 {
     protected $label;
+    protected $target;
 
     const VIEW_NAME = 'nova-telescope-link::navigation';
 
-    public function __construct(?string $label = 'Telescope Debug')
+    public function __construct(?string $label = 'Telescope Debug', ?string $target = 'self')
     {
         parent::__construct();
 
         $this->label = $label;
+        $this->target = $target;
     }
 
     /**
      * Create link with _Telescope_ logo.
      */
-    public static function useLogo(): self
+    public static function useLogo(?string $target = 'self'): self
     {
-        return new static(null);
+        return new static(null, $target);
     }
 
     /**
@@ -35,6 +37,7 @@ class TelescopeLink extends Tool
     {
         view()->composer(self::VIEW_NAME, function ($view) {
             $view->with('label', $this->label);
+            $view->with('target', $this->target);
         });
 
         $this->canSee(function ($request) {
