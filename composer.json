@@ -20,7 +20,7 @@
     ],
     "require": {
         "php": ">=7.1.0",
-        "laravel/telescope": "^0.1",
+        "laravel/telescope": "^1.0",
         "laravel/nova": "*"
     },
     "autoload": {
