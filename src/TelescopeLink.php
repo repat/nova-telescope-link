@@ -44,6 +44,10 @@ class TelescopeLink extends Tool
      */
     public function renderNavigation()
     {
+        if (! config('telescope.enabled')) {
+            return '';
+        }
+
         return view(self::VIEW_NAME);
     }
 
