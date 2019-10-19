@@ -4,7 +4,7 @@ All notable changes to `mad-web/nova-telescope-link` will be documented in this 
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
-## 2.0.2 - Under Development
+## 2.0.2 - 2019-10-19
 
 - added disabling of navigation link rendering if Telescope is disabled, preventing PHP error
 
