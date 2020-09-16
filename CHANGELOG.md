@@ -4,6 +4,10 @@ All notable changes to `mad-web/nova-telescope-link` will be documented in this 
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
+## 4.0.0 - 2020-09-16
+
+Added Laravel Telescope 4.0 support
+
 ## 3.0.0 - 2020-02-20
 
 - added Laravel Telescope 3.0 support
